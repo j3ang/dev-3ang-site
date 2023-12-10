@@ -1,8 +1,8 @@
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 import CommonHeaderIconBtn from './common-header-icon-btn';
-import MoonSVG from './icons/svgs/moonSVG';
-import SunSVG from './icons/svgs/sunSVG';
+import MoonSVG from './icons/svgs/MoonSVG';
+import SunSVG from './icons/svgs/SunSVG';
 
 export default function ThemeToggler() {
 	const { resolvedTheme, theme, setTheme } = useTheme();
