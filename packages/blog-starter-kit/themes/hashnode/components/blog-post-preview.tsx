@@ -21,7 +21,7 @@ function BlogPostPreview(props: {
   pinnedPostId?: string;
 }) {
   const { post, publication, pinnedPostId } = props;
-  const postURL = `/${post.slug}`;
+  const postURL = `/blog/${post.slug}`;
   const {
     preferences: { layout },
     features,

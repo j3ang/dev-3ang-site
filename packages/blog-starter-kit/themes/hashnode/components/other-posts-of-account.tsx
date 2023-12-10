@@ -13,14 +13,14 @@ type Props = {
 
 function OtherPostsOfAccount(props: Props) {
   const {  morePosts, post } = props;
- 
+
   if (!morePosts || morePosts.length === 0) {
     return <div />;
   }
-  
+
   const morePostsRendered = morePosts.map((postNode: any) => {
     const post  = postNode.node;
-    const postURL = `/${post.slug}`;
+    const postURL = `/blog/${post.slug}`;
     return (
       <div
         className={twJoin(

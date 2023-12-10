@@ -1,12 +1,11 @@
 import { twJoin } from 'tailwind-merge';
-import { lightOrDark } from '../utils/commonUtils';
 import { useAppContext } from './contexts/appContext';
-import { Button } from './custom-button';
 import HeaderBlogSearch from './header-blog-search';
 import HeaderLeftSidebar from './header-left-sidebar';
 import PublicationLogo from './publication-logo';
 import PublicationNavLinks from './publication-nav-links';
 import PublicationSocialLinks from './publication-social-links';
+import ThemeToggler from './theme-toggler';
 
 type Props = {
 	currentMenuId?: string | null;
@@ -18,18 +17,12 @@ export const Header = (props: Props) => {
 	const { publication } = useAppContext();
 
 	return (
-		<header
-			className="blog-header relative z-50 w-full border-b border-black/10 bg-white bg-opacity-70 dark:border-white/10 dark:bg-slate-900 dark:bg-opacity-70"
-		>
+		<header className="blog-header relative z-50 w-full border-b border-black/10 bg-white bg-opacity-70 dark:border-white/10 dark:bg-slate-900 dark:bg-opacity-70">
 			<div className="container mx-auto px-2 md:px-4 2xl:px-10">
 				<div className="relative z-40 flex flex-row items-center justify-between pb-2 pt-8 md:mb-4">
 					<div className="flex flex-row items-center py-1">
 						{/* Navigation for mobile view */}
-						<div
-							className={twJoin(
-								'md:hidden','dark:text-white',
-							)}
-						>
+						<div className={twJoin('md:hidden', 'dark:text-white')}>
 							<HeaderLeftSidebar publication={publication} />
 						</div>
 						<div className="hidden md:block">
@@ -37,13 +30,9 @@ export const Header = (props: Props) => {
 						</div>
 					</div>
 
-					<div
-						className={twJoin(
-							'flex flex-row items-center','dark:text-white',
-						)}
-					>
+					<div className={twJoin('flex flex-row items-center', 'dark:text-white')}>
+						<ThemeToggler />
 						<HeaderBlogSearch publication={publication} />
-						<Button as="a" href="#" type="primary" label="Sign up" />
 					</div>
 				</div>
 
@@ -55,15 +44,11 @@ export const Header = (props: Props) => {
 				<div className="blog-sub-header" data-testid="blog-sub-header">
 					{/* Desktop */}
 					<div className="justify-betweem mx-0 mb-2 hidden w-full flex-row items-center md:flex">
-						<PublicationSocialLinks
-							links={publication.links}
-						/>
+						<PublicationSocialLinks links={publication.links} />
 					</div>
 					{/* Mobile view */}
 					<div className="mb-2 flex w-full flex-col items-center md:hidden">
-						<PublicationSocialLinks
-							links={publication.links}
-						/>
+						<PublicationSocialLinks links={publication.links} />
 					</div>
 				</div>
 

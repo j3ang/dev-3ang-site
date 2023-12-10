@@ -1213,7 +1213,9 @@ type Publication implements Node {
   author: User!
   """The canonical URL of the publication."""
   canonicalURL: String!
-  """The description of the publication, used in og:description meta tag."""
+  """
+  The description of the publication, used in og:description meta tag. Fall backs to Publication.about.text if no SEO description is provided.
+  """
   descriptionSEO: String
   """The title of the publication. Shown in blog home page."""
   displayTitle: String

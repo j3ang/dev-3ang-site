@@ -13,9 +13,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 	const data = await request<PublicationByHostQuery, PublicationByHostQueryVariables>(
 		GQL_ENDPOINT,
 		PublicationByHostDocument,
-		{
-			host: process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST,
-		},
+		{ host: process.env.NEXT_PUBLIC_HASHNODE_PUBLICATION_HOST },
 	);
 
 	const publication = data.publication;

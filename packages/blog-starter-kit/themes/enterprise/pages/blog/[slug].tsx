@@ -6,14 +6,14 @@ import dynamic from 'next/dynamic';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 import Link from 'next/link';
-import { Container } from '../components/container';
-import { AppProvider } from '../components/contexts/appContext';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
-import { Layout } from '../components/layout';
-import { MarkdownToHtml } from '../components/markdown-to-html';
-import { PostHeader } from '../components/post-header';
-import { PostTOC } from '../components/post-toc';
+import { Container } from '../../components/container';
+import { AppProvider } from '../../components/contexts/appContext';
+import { Footer } from '../../components/footer';
+import { Header } from '../../components/header';
+import { Layout } from '../../components/layout';
+import { MarkdownToHtml } from '../../components/markdown-to-html';
+import { PostHeader } from '../../components/post-header';
+import { PostTOC } from '../../components/post-toc';
 import {
 	PageByPublicationDocument,
 	PageByPublicationQuery,
@@ -27,7 +27,7 @@ import {
 	SlugPostsByPublicationQuery,
 	SlugPostsByPublicationQueryVariables,
 	StaticPageFragment,
-} from '../generated/graphql';
+} from '../../generated/graphql';
 // @ts-ignore
 import handleMathJax from '@starter-kit/utils/handle-math-jax';
 import { useEffect, useState } from 'react';
@@ -36,9 +36,9 @@ import { loadIframeResizer } from '@starter-kit/utils/renderer/services/embed';
 import { triggerCustomWidgetEmbed } from '@starter-kit/utils/trigger-custom-widget-embed';
 import { useEmbeds } from '@starter-kit/utils/renderer/hooks/useEmbeds';
 
-const Subscribe = dynamic(() => import('../components/subscribe').then((mod) => mod.Subscribe));
+const Subscribe = dynamic(() => import('../../components/subscribe').then((mod) => mod.Subscribe));
 const PostComments = dynamic(() =>
-	import('../components/post-comments').then((mod) => mod.PostComments),
+	import('../../components/post-comments').then((mod) => mod.PostComments),
 );
 
 type Props =
@@ -80,11 +80,11 @@ const Post = (publication: PublicationFragment, post: PostFullFragment) => {
 		if (screen.width <= 425) {
 		  setMobMount(true);
 		}
-	
+
 		if (!post) {
 		  return;
 		}
-	
+
 		// TODO:
 		// More of an alert, did this below to wrap async funcs inside useEffect
 		(async () => {

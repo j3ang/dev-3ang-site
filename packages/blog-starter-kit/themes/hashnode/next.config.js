@@ -59,6 +59,7 @@ const getRedirectionRules = async () => {
  * @type {import('next').NextConfig}
  */
 const config = {
+	darkMode: 'class',
 	transpilePackages: ['@starter-kit/utils'],
 	basePath: getBasePath(),
 	experimental: {
