@@ -322,3 +322,38 @@ img.image--right {
 		@apply ring-blue-600 ring-offset-white dark:ring-offset-slate-800;
 	}
 }
+
+.appear {
+	opacity: 0;
+	animation: appear 0.8s cubic-bezier(0.1, 0, 0.175, 1) forwards;
+}
+
+@keyframes appear {
+	to {
+		opacity: 1;
+	}
+}
+
+.appear-1 {
+	animation-delay: 0.4s;
+}
+
+.appear-2 {
+	animation-delay: 0.8s;
+}
+
+.appear-3 {
+	animation-delay: 1.2s;
+}
+
+.appear-4 {
+	animation-delay: 1.6s;
+}
+
+.appear-5 {
+	animation-delay: 2s;
+}
+
+.appear-6 {
+	animation-delay: 2.4s;
+}
